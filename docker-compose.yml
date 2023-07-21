@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  unity_builder:
+    image: tongying_unity_2021.3.18f
+    container_name: unity_builder_container
+    volumes:
+      - /home/tongying/dockers/unity-ci-demo:/unity_project
+    command: sh -c "/opt/unity/Editor/Unity -batchmode -nographics -quit -logFile /dev/stdout -projectPath /unity_project -buildTarget Android -executeMethod xasset.editor.MenuItems.BuildPlayer"
+
+    #-logFile /unity_project/unity_log.txt
